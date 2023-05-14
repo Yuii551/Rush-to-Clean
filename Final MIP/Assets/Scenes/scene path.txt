@@ -1,9 +1,0 @@
-scene 1
-assest > scene >scene 1 > demoscene
-
-scene 2
-assest > scene >scene 2 > scene
-
-
-scene 3 & 4 
-assest > scene >scene 3+4 >apartment kit > scene
