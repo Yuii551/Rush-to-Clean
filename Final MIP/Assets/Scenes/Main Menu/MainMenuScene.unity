@@ -3243,7 +3243,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 921288117}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1266684891}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &957546280
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,14 +4174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b462fcd94a62f242b50f216c95ab880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButton: {fileID: 0}
+  playButton: {fileID: 1764159816}
   tutorialButton: {fileID: 1676029246}
   quitButton: {fileID: 921288119}
   volumeTextValue: {fileID: 2038568162}
-  volumeSlider: {fileID: 1515485927}
-  defaultVolume: 1
   controllerSenTextValue: {fileID: 905939329}
-  controllerSenSlider: {fileID: 1149791475}
   mainControllerSen: 4
   qualityDropdown: {fileID: 1783977251}
 --- !u!4 &1266684893
@@ -5477,7 +5486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1676029244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1266684891}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1729956533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6141,7 +6162,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1764159814}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1266684891}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1783977250
 GameObject:
   m_ObjectHideFlags: 0

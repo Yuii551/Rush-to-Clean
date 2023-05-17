@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loading/LoadingScene.unity
     guid: 1c0307b46727a8d45bd6b66919b35126
+  - enabled: 1
+    path: Assets/Scenes/Map Selection/MapSelection.unity
+    guid: 581d91154ba074f45a97abe1a22ab855
+  - enabled: 1
+    path: Assets/Scenes/Hotel 1.unity
+    guid: 70a9b71e8f15a4f4cb3e52a8021d5258
+  - enabled: 1
+    path: Assets/Scenes/Hotel 2.unity
+    guid: 48aabf0c1316e59419fa0e1e615c3348
+  - enabled: 1
+    path: Assets/Scenes/Office.unity
+    guid: fb44f738257acc048b14b6c494bb4f14
+  - enabled: 1
+    path: Assets/Scenes/School.unity
+    guid: 536d20968712f274782634d84f7d4082
   m_configObjects: {}

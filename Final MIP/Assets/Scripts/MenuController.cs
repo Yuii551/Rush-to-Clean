@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class MenuController : MonoBehaviour
 {
-
+    [SerializeField] private Button playButton;
     [SerializeField] private Button tutorialButton;
     [SerializeField] private Button quitButton;
 
@@ -26,15 +24,24 @@ public class MenuController : MonoBehaviour
 
     private void Awake()
     {
-        tutorialButton.onClick.AddListener(() =>
-        {
-            SceneManager.LoadScene(1);
-        });
+        playButton.onClick.AddListener(PlayButtonClicked);
+        tutorialButton.onClick.AddListener(TutorialButtonClicked);
+        quitButton.onClick.AddListener(QuitButtonClicked);
+    }
 
-        quitButton.onClick.AddListener(() =>
-        {
-            Application.Quit();
-        });
+    private void PlayButtonClicked()
+    {
+        SceneManager.LoadScene("MapSelection");
+    }
+
+    private void TutorialButtonClicked()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
+
+    private void QuitButtonClicked()
+    {
+        Application.Quit();
     }
 
     public void SetVolume(float volume)
@@ -69,5 +76,6 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetInt("masterQuality", _qualityLevel);
         QualitySettings.SetQualityLevel(_qualityLevel);
     }
-}
 
+
+}
