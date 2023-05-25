@@ -1297,8 +1297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectiblePrefab: {fileID: 1829443077547712902, guid: 8baad08c3ef4f274db53c6f61ce6fff9, type: 3}
-  initialSpawnCount: 5
-  additionalSpawnCount: 3
+  initialSpawnCount: 10
+  additionalSpawnCount: 5
 --- !u!4 &1323859225
 Transform:
   m_ObjectHideFlags: 0
