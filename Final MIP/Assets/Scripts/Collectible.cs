@@ -9,14 +9,13 @@ public class Collectible : MonoBehaviour
     }
 
     public CollectibleType collectibleType;
-    public int pointsValue = 10;
+    public int pointsValue;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            ScoreManager.Instance.UpdateScore(collectibleType, pointsValue);
-            CollectibleSpawner.Instance.CollectibleDestroyed();
+            ScoreManager.Instance.UpdateScore(pointsValue);
             Destroy(gameObject);
         }
     }

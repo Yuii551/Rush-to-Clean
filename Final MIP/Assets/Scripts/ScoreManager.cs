@@ -11,6 +11,8 @@ public class ScoreManager : MonoBehaviour
     private int currentScore = 0;
     private bool missionCompleted = false;
 
+    public GameOverScreen gameManager;
+
     private void Awake()
     {
         if (Instance == null)
@@ -30,19 +32,11 @@ public class ScoreManager : MonoBehaviour
         scoreSlider.value = currentScore;
     }
 
-    public void UpdateScore(Collectible.CollectibleType collectibleType, int pointsValue)
+    public void UpdateScore(int pointsValue)
     {
         if (!missionCompleted)
         {
-            if (collectibleType == Collectible.CollectibleType.AddPoints)
-            {
-                currentScore += pointsValue;
-            }
-            else if (collectibleType == Collectible.CollectibleType.DeductPoints)
-            {
-                currentScore -= pointsValue;
-            }
-
+            currentScore += pointsValue;
             scoreSlider.value = currentScore;
             CheckScoreTarget();
         }
@@ -53,7 +47,7 @@ public class ScoreManager : MonoBehaviour
         if (currentScore >= scoreTarget)
         {
             missionCompleted = true;
-            // Do something when the score target is reached
+            gameManager.GameOver();
         }
     }
 }
