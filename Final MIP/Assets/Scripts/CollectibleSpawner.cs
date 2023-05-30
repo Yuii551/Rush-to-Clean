@@ -13,7 +13,7 @@ public class CollectibleSpawner : MonoBehaviour
 
     private int collectibleCount;
     private int collectedCount = 0;
-    private float minDistance = 1f; // Minimum distance between collectibles
+    private float minDistance = 0.5f; // Minimum distance between collectibles
 
     private void Awake()
     {
