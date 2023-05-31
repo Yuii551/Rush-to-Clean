@@ -23,6 +23,8 @@ public class GamePaused : MonoBehaviour
             else
                 ResumeGame();
         }
+
+       
     }
 
     public void PauseGame()

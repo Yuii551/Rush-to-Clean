@@ -9,7 +9,6 @@ public class MapSelector : MonoBehaviour
     public Button mapButton;
     public string loadingSceneName;
     public string mapSceneName;
-    public int mapNumber;
 
     [SerializeField] private GameObject loadingScene;
     [SerializeField] private Slider slider;
@@ -22,7 +21,6 @@ public class MapSelector : MonoBehaviour
     public void OnClick()
     {
         StartCoroutine(LoadMapScene());
-        GameSceneController.selectedMap = mapNumber; // You may need to adjust this line based on your specific implementation
     }
 
     private IEnumerator LoadMapScene()
