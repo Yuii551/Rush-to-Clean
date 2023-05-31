@@ -15,6 +15,7 @@ public class GameScreen : MonoBehaviour
 
     public void BackButtonClicked()
     {
+        backButton.interactable = false; // Disable the button
         SceneManager.LoadScene("MainMenuScene");
     }
 
@@ -22,6 +23,7 @@ public class GameScreen : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            backButton.interactable = false; // Disable the button
             SceneManager.LoadScene("MainMenuScene");
         }
     }
