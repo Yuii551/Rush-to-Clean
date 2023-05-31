@@ -15,8 +15,8 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TMP_Text volumeTextValue = null;
 
     [Header("Gameplay Settings")]
-    [SerializeField] private TMP_Text controllerSenTextValue = null;
-    public int mainControllerSen = 4;
+    [SerializeField] private TMP_Text SensitivityTextValue = null;
+    public int mainSensitivity = 4;
 
     [Header("Graphics Settings")]
     [Space(10)]
@@ -96,15 +96,15 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
     }
 
-    public void SetControllerSen(float sensitivity)
+    public void SetSensitivity(float sensitivity)
     {
-        mainControllerSen = Mathf.RoundToInt(sensitivity);
-        controllerSenTextValue.text = sensitivity.ToString("0");
+        mainSensitivity = Mathf.RoundToInt(sensitivity);
+        SensitivityTextValue.text = sensitivity.ToString("0");
     }
 
     public void GameplayApply()
     {
-        PlayerPrefs.SetFloat("masterSen", mainControllerSen);
+        PlayerPrefs.SetFloat("masterSen", mainSensitivity);
     }
 
     public void SetQuality(int qualityIndex)

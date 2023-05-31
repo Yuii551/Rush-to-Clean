@@ -18,8 +18,8 @@ public class LoadPrefs : MonoBehaviour
     [SerializeField] private TMP_Dropdown qualityDropdown;
 
     [Header("Sensitivty Settings")]
-    [SerializeField] private TMP_Text controllerSenTextValue = null;
-    [SerializeField] private Slider controllerSensSlider = null;
+    [SerializeField] private TMP_Text sensitivityTextValue = null;
+    [SerializeField] private Slider sensitivitySlider = null;
 
     private void Awake()
     {
@@ -45,9 +45,9 @@ public class LoadPrefs : MonoBehaviour
             {
                 float localSensitivity = PlayerPrefs.GetFloat("masterSen");
 
-                controllerSenTextValue.text = localSensitivity.ToString("0.0");
-                controllerSensSlider.value = localSensitivity;
-                menuController.mainControllerSen = Mathf.RoundToInt(localSensitivity);
+                sensitivityTextValue.text = localSensitivity.ToString("0.0");
+                sensitivitySlider.value = localSensitivity;
+                menuController.mainSensitivity = Mathf.RoundToInt(localSensitivity);
             }
         }
     }

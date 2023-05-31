@@ -677,8 +677,8 @@ MonoBehaviour:
   volumeTextValue: {fileID: 2038568162}
   volumeSlider: {fileID: 1515485927}
   qualityDropdown: {fileID: 1783977251}
-  controllerSenTextValue: {fileID: 905939329}
-  controllerSensSlider: {fileID: 1149791475}
+  sensitivityTextValue: {fileID: 905939329}
+  sensitivitySlider: {fileID: 1149791475}
 --- !u!4 &166124708
 Transform:
   m_ObjectHideFlags: 0
@@ -3106,7 +3106,7 @@ GameObject:
   - component: {fileID: 905939330}
   - component: {fileID: 905939329}
   m_Layer: 5
-  m_Name: ControllerSensitivityValue
+  m_Name: SensitivityValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3542,7 +3542,7 @@ GameObject:
   - component: {fileID: 989765168}
   - component: {fileID: 989765167}
   m_Layer: 5
-  m_Name: ControllerSensitivityText
+  m_Name: SensitivityText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3565,8 +3565,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -266, y: -21}
-  m_SizeDelta: {x: 237.52, y: 150.654}
+  m_AnchoredPosition: {x: -178, y: -17}
+  m_SizeDelta: {x: 342.683, y: 86.338}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &989765167
 MonoBehaviour:
@@ -3588,9 +3588,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CONTROLLLER
-
-    SENSITIVITY'
+  m_text: SENSITIVITY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3653,7 +3651,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -139.15634, w: 0}
+  m_margin: {x: 0, y: 0, z: -2.444397, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4128,7 +4126,7 @@ GameObject:
   - component: {fileID: 1149791474}
   - component: {fileID: 1149791475}
   m_Layer: 5
-  m_Name: ControllerSensitivitySlider
+  m_Name: SensitivitySlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4156,7 +4154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55, y: 0}
+  m_AnchoredPosition: {x: 83, y: 0}
   m_SizeDelta: {x: 369.4, y: 64.022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1149791475
@@ -4203,7 +4201,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 594911075}
   m_HandleRect: {fileID: 523719564}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 8
   m_WholeNumbers: 1
   m_Value: 0
@@ -4212,7 +4210,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1266684892}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: SetControllerSen
+        m_MethodName: SetSensitivity
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4584,8 +4582,8 @@ MonoBehaviour:
   tutorialButton: {fileID: 1676029246}
   quitButton: {fileID: 921288119}
   volumeTextValue: {fileID: 2038568162}
-  controllerSenTextValue: {fileID: 905939329}
-  mainControllerSen: 4
+  SensitivityTextValue: {fileID: 905939329}
+  mainSensitivity: 4
   qualityDropdown: {fileID: 1783977251}
   loadingScene: {fileID: 1140450706}
   slider: {fileID: 362908398}
@@ -8676,50 +8674,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!1 &2101678780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2101678782}
-  - component: {fileID: 2101678781}
-  m_Layer: 0
-  m_Name: GameSceneController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2101678781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101678780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 257f7ca0d718e7148a24be75e2d27be5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2101678782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101678780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 405.06644, y: 199.3133, z: -0.55350053}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2111542250
 GameObject:
   m_ObjectHideFlags: 0
