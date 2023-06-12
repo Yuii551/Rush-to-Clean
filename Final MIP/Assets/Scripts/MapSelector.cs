@@ -10,7 +10,7 @@ public class MapSelector : MonoBehaviour
     public string loadingSceneName;
     public string mapSceneName;
 
-    [SerializeField] private GameObject loadingScene;
+    [SerializeField] private MapSelector loadingScene;
     [SerializeField] private Slider slider;
 
     private void Awake()
@@ -25,15 +25,6 @@ public class MapSelector : MonoBehaviour
 
     private IEnumerator LoadMapScene()
     {
-        // Show the loading scene
-        if (loadingScene == null)
-        {
-            Debug.LogError("Loading scene GameObject is not assigned. Make sure to assign it in the inspector.");
-            yield break;
-        }
-
-        loadingScene.SetActive(true);
-
         // Load the loading scene asynchronously
         AsyncOperation loadingOperation = SceneManager.LoadSceneAsync(loadingSceneName);
         loadingOperation.allowSceneActivation = false;
@@ -43,47 +34,40 @@ public class MapSelector : MonoBehaviour
             // Calculate the progress of the loading scene (0 to 0.9)
             float loadingProgress = Mathf.Clamp01(loadingOperation.progress / 0.9f);
 
-            // Update the slider value accordingly
-            if (slider == null)
-            {
-                Debug.LogError("Slider component is not assigned. Make sure to assign it in the inspector.");
-                yield break;
-            }
-
-            slider.value = loadingProgress;
-
             // If the loading is nearly complete
             if (loadingProgress >= 0.9f)
             {
                 // Wait for a short delay
                 yield return new WaitForSeconds(0.5f);
 
-                // Activate the loading scene to transition to the desired scene
+                // Activate the loading scene to transition to the help scene
                 loadingOperation.allowSceneActivation = true;
             }
 
             yield return null;
         }
 
+        // Load the help scene asynchronously
+        AsyncOperation helpOperation = SceneManager.LoadSceneAsync("HelpScene", LoadSceneMode.Additive);
+
+        while (!helpOperation.isDone)
+        {
+            yield return null;
+        }
+
+        // Unload the loading scene
+        SceneManager.UnloadSceneAsync(loadingSceneName);
+
         // Load the map scene asynchronously
-        AsyncOperation mapOperation = SceneManager.LoadSceneAsync(mapSceneName);
+        AsyncOperation mapOperation = SceneManager.LoadSceneAsync(mapSceneName, LoadSceneMode.Additive);
 
         while (!mapOperation.isDone)
         {
-            // Calculate the progress of the map scene loading (0 to 1)
-            float mapProgress = Mathf.Clamp01(mapOperation.progress / 0.9f);
-
-            // Update the slider value accordingly
-            if (slider == null)
-            {
-                Debug.LogError("Slider component is not assigned. Make sure to assign it in the inspector.");
-                yield break;
-            }
-
-            slider.value = mapProgress;
-
             yield return null;
         }
+
+        // Unload the help scene
+        SceneManager.UnloadSceneAsync("HelpScene");
     }
 }
 

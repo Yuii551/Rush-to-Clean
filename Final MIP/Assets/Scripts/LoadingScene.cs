@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScene : MonoBehaviour
 {
-    [SerializeField] private GameObject loadingScene;
+    [SerializeField] private UnityEngine.GameObject loadingScene;
     [SerializeField] private Slider slider;
     [SerializeField] private float delayDuration = 2f; // Adjust the delay duration here
 

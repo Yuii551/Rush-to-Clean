@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public GameObject gameManager;
+    public UnityEngine.GameObject gameManager;
+    public TMP_Text gameOverText;
 
     private bool isGameOver;
 
@@ -25,6 +27,17 @@ public class GameOverScreen : MonoBehaviour
         gameManager.SetActive(true);
         Time.timeScale = 0f; // Pause the game
         isGameOver = true;
+        gameOverText.text = "GAME OVER";
+    }
+
+    public void GameWon()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        gameManager.SetActive(true);
+        Time.timeScale = 0f; // Pause the game
+        isGameOver = true;
+        gameOverText.text = "YOU WIN";
     }
 
     public void Restart()

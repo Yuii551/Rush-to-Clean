@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
 
     private int currentScore = 0;
     private bool missionCompleted = false;
+    private bool isGameWon = false;
 
     [SerializeField]
     private GameOverScreen gameOverScreen;
@@ -56,7 +57,8 @@ public class ScoreManager : MonoBehaviour
         if (currentScore >= scoreTarget)
         {
             missionCompleted = true;
-            gameOverScreen.GameOver(); // Call the GameOver() method in GameOverScreen script
+            isGameWon = true;
+            gameOverScreen.GameWon(); // Call the GameOver() method in GameOverScreen script
         }
     }
 }

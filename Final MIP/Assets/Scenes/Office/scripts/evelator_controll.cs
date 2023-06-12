@@ -7,7 +7,7 @@ public class evelator_controll : MonoBehaviour
     public List<int> sequenceElevator = new List<int>();
     public bool Elevator_in_run;
     public float[] FloorHighs;
-    public GameObject ElevatorCabin;
+    public UnityEngine.GameObject ElevatorCabin;
   
 
     public void AddTaskEve(string name)
@@ -155,7 +155,7 @@ public class evelator_controll : MonoBehaviour
     }
 
 
-    public GameObject[] FloorNumbers;
+    public UnityEngine.GameObject[] FloorNumbers;
     public int CurrentFloorNumber;
 
     public void ChangeFloorNumbers()
@@ -188,11 +188,11 @@ public class evelator_controll : MonoBehaviour
         }
 
 
-        foreach (GameObject Numberassemble in FloorNumbers)
+        foreach (UnityEngine.GameObject Numberassemble in FloorNumbers)
         {
 
 
-            List<GameObject> Numbers_in_holder = new List<GameObject>();
+            List<UnityEngine.GameObject> Numbers_in_holder = new List<UnityEngine.GameObject>();
 
 
 
@@ -207,7 +207,7 @@ public class evelator_controll : MonoBehaviour
 
             }
 
-            foreach (GameObject numberA in Numbers_in_holder)
+            foreach (UnityEngine.GameObject numberA in Numbers_in_holder)
             {
                 numberA.SetActive(false);
                 Numbers_in_holder[CurrentFloorNumber - 1].SetActive(true);
@@ -222,11 +222,11 @@ public class evelator_controll : MonoBehaviour
 
     public float DoorOpenTime;
 
-    public GameObject[] Door_outside_left; public float[] Door_outside_left_close_value; public float[] Door_outside_left_open_value;
-    public GameObject[] Door_outside_right; public float[] Door_outside_right_close_value; public float[] Door_outside_right_open_value;
+    public UnityEngine.GameObject[] Door_outside_left; public float[] Door_outside_left_close_value; public float[] Door_outside_left_open_value;
+    public UnityEngine.GameObject[] Door_outside_right; public float[] Door_outside_right_close_value; public float[] Door_outside_right_open_value;
 
-    public GameObject Door_inside_right; public float Door_inside_right_close_value; public float Door_inside_right_open_value;
-    public GameObject Door_inside_left; public float Door_inside_left_close_value; public float Door_inside_left_open_value;
+    public UnityEngine.GameObject Door_inside_right; public float Door_inside_right_close_value; public float Door_inside_right_open_value;
+    public UnityEngine.GameObject Door_inside_left; public float Door_inside_left_close_value; public float Door_inside_left_open_value;
 
 
 

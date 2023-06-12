@@ -4,8 +4,8 @@ public class CollectibleSpawner : MonoBehaviour
 {
     public static CollectibleSpawner Instance { get; private set; }
 
-    public GameObject addPointsCollectiblePrefab;
-    public GameObject deductPointsCollectiblePrefab;
+    public UnityEngine.GameObject addPointsCollectiblePrefab;
+    public UnityEngine.GameObject deductPointsCollectiblePrefab;
     public int initialCollectibleCount = 5;
     public int additionalCollectibleCount = 3;
     public int collectiblesBeforeAdditional = 3;
@@ -51,7 +51,7 @@ public class CollectibleSpawner : MonoBehaviour
 
     private void SpawnCollectible()
     {
-        GameObject collectiblePrefab = GetRandomCollectiblePrefab();
+        UnityEngine.GameObject collectiblePrefab = GetRandomCollectiblePrefab();
         Vector3 spawnPosition = GetRandomPositionAboveFloors();
 
         // Check distance to existing collectibles
@@ -64,8 +64,8 @@ public class CollectibleSpawner : MonoBehaviour
             isValidSpawn = true;
 
             // Check distance to existing collectibles
-            GameObject[] existingCollectibles = GameObject.FindGameObjectsWithTag("Collectible");
-            foreach (GameObject existingCollectible in existingCollectibles)
+            UnityEngine.GameObject[] existingCollectibles = UnityEngine.GameObject.FindGameObjectsWithTag("Collectible");
+            foreach (UnityEngine.GameObject existingCollectible in existingCollectibles)
             {
                 float distance = Vector3.Distance(existingCollectible.transform.position, spawnPosition);
                 if (distance < minDistance)
@@ -88,7 +88,7 @@ public class CollectibleSpawner : MonoBehaviour
         // Spawn the collectible if a valid spawn position is found
         if (isValidSpawn)
         {
-            GameObject newCollectible = Instantiate(collectiblePrefab, spawnPosition, Quaternion.identity);
+            UnityEngine.GameObject newCollectible = Instantiate(collectiblePrefab, spawnPosition, Quaternion.identity);
             collectibleCount++;
         }
         else
@@ -97,7 +97,7 @@ public class CollectibleSpawner : MonoBehaviour
         }
     }
 
-    private GameObject GetRandomCollectiblePrefab()
+    private UnityEngine.GameObject GetRandomCollectiblePrefab()
     {
         float randomValue = Random.value;
         if (randomValue <= 0.5f)
@@ -112,14 +112,14 @@ public class CollectibleSpawner : MonoBehaviour
 
     private Vector3 GetRandomPositionAboveFloors()
     {
-        GameObject[] floorObjects = GameObject.FindGameObjectsWithTag("Floor");
+        UnityEngine.GameObject[] floorObjects = UnityEngine.GameObject.FindGameObjectsWithTag("Floor");
         if (floorObjects.Length == 0)
         {
             Debug.LogError("No floor objects found with the 'Floor' tag.");
             return Vector3.zero;
         }
 
-        GameObject randomFloor = floorObjects[Random.Range(0, floorObjects.Length)];
+        UnityEngine.GameObject randomFloor = floorObjects[Random.Range(0, floorObjects.Length)];
         Renderer floorRenderer = randomFloor.GetComponent<Renderer>();
         Vector3 floorPosition = floorRenderer.bounds.center;
         Vector3 floorExtents = floorRenderer.bounds.extents;
@@ -133,7 +133,7 @@ public class CollectibleSpawner : MonoBehaviour
         return randomPosition;
     }
 
-    private Bounds GetWorldBounds(GameObject obj)
+    private Bounds GetWorldBounds(UnityEngine.GameObject obj)
     {
         Renderer renderer = obj.GetComponent<Renderer>();
         if (renderer != null)

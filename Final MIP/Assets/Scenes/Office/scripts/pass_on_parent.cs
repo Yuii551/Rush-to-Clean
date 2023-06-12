@@ -5,7 +5,7 @@ using UnityEngine;
 public class pass_on_parent : MonoBehaviour
 {
 
-    public GameObject MyParent;
+    public UnityEngine.GameObject MyParent;
 
 	
 }

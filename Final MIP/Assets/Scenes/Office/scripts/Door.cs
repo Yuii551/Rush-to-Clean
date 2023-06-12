@@ -13,11 +13,11 @@ public class Door : MonoBehaviour
     public class DoorGet 
     {
 
-        public GameObject Door;
+        public UnityEngine.GameObject Door;
         public int CloseValue;
         public int OpenValue;
         public bool isDoorOpen;
-        public GameObject RotationOrigin;
+        public UnityEngine.GameObject RotationOrigin;
 
 
     }
@@ -94,7 +94,7 @@ public class Door : MonoBehaviour
     public Coroutine DoorStartUsing;
     
 
-    public IEnumerator OpenDoor(int Angle,GameObject currentDoor,GameObject RotationOri)
+    public IEnumerator OpenDoor(int Angle, UnityEngine.GameObject currentDoor, UnityEngine.GameObject RotationOri)
     {
         
 
@@ -142,7 +142,7 @@ public class Door : MonoBehaviour
 
 
 
-    public IEnumerator CloseDoor(int Angle, GameObject currentDoor,int OpenValue, GameObject RotationOri)
+    public IEnumerator CloseDoor(int Angle, UnityEngine.GameObject currentDoor,int OpenValue, UnityEngine.GameObject RotationOri)
     {
         repeatLoop:
         yield return new WaitForSeconds(0.008f);

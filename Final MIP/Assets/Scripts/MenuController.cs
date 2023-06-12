@@ -9,6 +9,7 @@ public class MenuController : MonoBehaviour
 {
     [SerializeField] private Button playButton;
     [SerializeField] private Button tutorialButton;
+    [SerializeField] private Button aboutButton;
     [SerializeField] private Button quitButton;
 
     [Header("Volume Setting")]
@@ -23,7 +24,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TMP_Dropdown qualityDropdown;
 
     [Header("Loading")]
-    [SerializeField] private GameObject loadingScene;
+    [SerializeField] private UnityEngine.GameObject loadingScene;
     [SerializeField] private Slider slider;
 
     private int _qualityLevel;
@@ -31,17 +32,25 @@ public class MenuController : MonoBehaviour
     private void Awake()
     {
         playButton.onClick.AddListener(PlayButtonClicked);
+        aboutButton.onClick.AddListener(AboutButtonClicked);
         quitButton.onClick.AddListener(QuitButtonClicked);
     }
 
     private void Start()
     {
         QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("masterQuality", 2));
+
+        quitButton = quitButton.GetComponent<Button>();
     }
 
     public void PlayButtonClicked()
     {
         SceneManager.LoadScene("MapSelection");
+    }
+
+    public void AboutButtonClicked()
+    {
+        SceneManager.LoadScene("CreditScene");
     }
 
     public void TutorialButtonClicked()
@@ -80,9 +89,20 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.Q))
+        {
+            quitButton.onClick.Invoke();
+        }
+    }
     public void QuitButtonClicked()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 
     public void SetVolume(float volume)

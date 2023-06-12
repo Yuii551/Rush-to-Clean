@@ -8,7 +8,7 @@ public class Fix_elevator_fall : MonoBehaviour
     
     public float PlayerHeightLocal;
     public bool inElevator;
-    public GameObject Player;
+    public UnityEngine.GameObject Player;
 
     private void OnTriggerEnter(Collider other)
     {
