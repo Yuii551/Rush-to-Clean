@@ -9,7 +9,6 @@ public class ScoreManager : MonoBehaviour
     public int scoreTarget = 100;
 
     private int currentScore = 0;
-    private bool missionCompleted = false;
     private bool isGameWon = false;
 
     [SerializeField]
@@ -36,29 +35,26 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore(Collectible.CollectibleType collectibleType, int pointsValue)
     {
-        if (!missionCompleted)
+        if (collectibleType == Collectible.CollectibleType.AddPoints)
         {
-            if (collectibleType == Collectible.CollectibleType.AddPoints)
-            {
-                currentScore += pointsValue;
-            }
-            else if (collectibleType == Collectible.CollectibleType.DeductPoints)
-            {
-                currentScore -= pointsValue;
-            }
-
-            scoreSlider.value = currentScore;
-            CheckScoreTarget();
+            currentScore += pointsValue;
         }
+        else if (collectibleType == Collectible.CollectibleType.DeductPoints)
+        {
+            currentScore -= pointsValue;
+            currentScore = Mathf.Max(currentScore, 0); // Ensure the score won't go below zero
+        }
+
+        scoreSlider.value = currentScore;
+        CheckScoreTarget();
     }
 
     private void CheckScoreTarget()
     {
         if (currentScore >= scoreTarget)
         {
-            missionCompleted = true;
             isGameWon = true;
-            gameOverScreen.GameWon(); // Call the GameOver() method in GameOverScreen script
+            gameOverScreen.GameWon(); // Call the GameWon() method in GameOverScreen script
         }
     }
 }
