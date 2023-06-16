@@ -2505,6 +2505,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8292841554463622902, guid: 051e06c319dfbf14dbfa3b82606596ec, type: 3}
+      propertyPath: initialCollectibleCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292841554463622902, guid: 051e06c319dfbf14dbfa3b82606596ec, type: 3}
+      propertyPath: addPointsCollectiblePrefab
+      value: 
+      objectReference: {fileID: 3001533242383813296, guid: 16f3d7c7fc7e8bf409d6bf1a1cd7c9e9, type: 3}
+    - target: {fileID: 8292841554463622902, guid: 051e06c319dfbf14dbfa3b82606596ec, type: 3}
+      propertyPath: deductPointsCollectiblePrefab
+      value: 
+      objectReference: {fileID: 4291523387101711288, guid: 21458d0ee16aa914b93d4771be1eb584, type: 3}
     - target: {fileID: 8292841554463622903, guid: 051e06c319dfbf14dbfa3b82606596ec, type: 3}
       propertyPath: m_RootOrder
       value: 5
